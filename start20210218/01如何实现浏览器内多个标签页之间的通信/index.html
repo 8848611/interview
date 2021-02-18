@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">设置localStorage</button>
+    <button id="btn2">设置sessionStorage</button>
+    
+    <iframe src="http://127.0.0.1:5500/start20210218/01%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E5%A4%9A%E4%B8%AA%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/demo2.html" frameborder="0" id="iframe"></iframe>
+    <br>
+    <button id="btn3">postMessage</button>
+    <script>
+        // 1.onstorage事件监听sessionStorage或localStorage数据变化
+        // 注意：该事件不在导致数据变化的当前页面触发（如果浏览器同时打开一个域名下面的多个页面，当其中的一个页面改变 sessionStorage 或 localStorage 的数据时，其他所有页面的  storage  事件会被触发，而原始页面并不触发 storage 事件）
+        btn1.onclick = function(){
+            localStorage.setItem('name','lx');
+            // 通过demo1监听
+        };
+
+        btn2.onclick = function(){
+            sessionStorage.setItem('age','18');
+            // 通过demo1监听
+        };
+
+        // 2.postMessage 方法
+        // var demo2 = document.getElementById('iframe').contentWindow
+        var demo2 = window.frames[0]
+        btn3.onclick = function(){
+            demo2.postMessage('呜呜呜','*');
+
+        };
+    </script>
+</body>
+</html>
