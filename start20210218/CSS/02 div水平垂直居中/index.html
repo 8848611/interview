@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 600px;
+            height: 600px;
+            background-color: red;
+            /* 方案一: */
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+
+            /* 方案二: */
+            /* position: relative; */
+
+            /* 方案三: */
+            /* position: relative; */
+
+            /* 方案四 */
+            /* display: grid; */
+        }
+        #child{
+            background-color: aqua;
+            width: 200px;
+            height:200px;
+            /* 方案二 */
+            /* position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            margin: auto */
+
+            /* 方案三 */
+            /* position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%); */
+
+            /* 方案四 */
+            /* justify-self: center;
+            align-self: center; */
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="child">
+            
+        </div>
+    </div>
+</body>
+</html>
